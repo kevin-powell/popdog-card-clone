@@ -1,0 +1,113 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-dark: rgb(13, 17, 19);
+  --clr-light: #fff;
+  --clr-accent: rgb(222, 52, 0);
+  --clr-accent-dark: rgb(163, 38, 0);
+  --clr-secondary: rgb(0, 76, 199);
+  --br: 0.5em;
+  --transition: transform 200ms cubic-bezier(0.21, 1, 0.81, 1);
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  background: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+.name {
+  font-weight: bold;
+}
+
+.streamers {
+  display: flex;
+  text-align: center;
+}
+
+.streamers img {
+  border-radius: 50%;
+}
+
+.icon {
+  width: 10em;
+  height: 10em;
+  position: relative;
+  transition: transform ease-in-out 150ms;
+}
+
+.streamer:hover .icon {
+  transform: translateY(-20%);
+}
+
+.streamer:hover .icon::before {
+  opacity: 1;
+}
+
+.streamer .icon:hover {
+  transform: translateY(-20%) scale(1.1);
+}
+
+.icon::before,
+.icon::after {
+  opacity: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.icon::before {
+  content: "\f04b";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 2em;
+  background: #f00;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  transition: opacity 75ms linear, background-color 100ms linear;
+}
+
+.icon:hover::before {
+  background: #cc0202;
+}
+
+.icon:hover::after {
+  background: #f00;
+  z-index: 1;
+  animation: pulse 1250ms infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
