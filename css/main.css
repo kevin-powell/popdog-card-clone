@@ -321,8 +321,8 @@ img {
           transform: translateY(-15%) scale(1.2);
 }
 
-.icon::before,
-.icon::after {
+.streamer .icon::before,
+.streamer .icon::after {
   opacity: 0;
   content: "";
   position: absolute;
@@ -333,7 +333,7 @@ img {
   border-radius: 50%;
 }
 
-.icon::before {
+.streamer .icon::before {
   content: "\f04b";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -347,11 +347,11 @@ img {
   transition: opacity 75ms linear, background-color 100ms linear;
 }
 
-.icon:hover::before {
+.streamer .icon:hover::before {
   background: #cc0202;
 }
 
-.icon:hover::after {
+.streamer .icon:hover::after {
   background: #f00;
   z-index: 1;
   -webkit-animation: pulse 1250ms infinite;
