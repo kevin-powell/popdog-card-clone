@@ -87,11 +87,13 @@ img {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
           clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0 0);
   -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
   transition: var(--transition);
 }
 
 .front {
   -webkit-transition: 250ms;
+  -o-transition: 250ms;
   transition: 250ms;
 }
 
@@ -137,12 +139,14 @@ img {
 
 .front .streamers img:nth-of-type(1) {
   -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
           transform: translateX(50%);
   z-index: 1;
 }
 
 .front .streamers img:nth-of-type(2) {
   -webkit-transform: translateX(25%);
+      -ms-transform: translateX(25%);
           transform: translateX(25%);
 }
 
@@ -164,6 +168,7 @@ img {
           align-items: center;
   gap: 1.5em;
   -webkit-transform: translateY(35%);
+      -ms-transform: translateY(35%);
           transform: translateY(35%);
 }
 
@@ -193,6 +198,7 @@ img {
   right: 0;
   z-index: -1;
   -webkit-transform: scale(0.2, 0.9);
+      -ms-transform: scale(0.2, 0.9);
           transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
@@ -200,11 +206,13 @@ img {
 
 .game:hover .rank {
   -webkit-transform: translate(150%, -61%);
+      -ms-transform: translate(150%, -61%);
           transform: translate(150%, -61%);
 }
 
 .game:hover .front {
   -webkit-transform: translateY(-30%) scale(0.8);
+      -ms-transform: translateY(-30%) scale(0.8);
           transform: translateY(-30%) scale(0.8);
 }
 
@@ -221,9 +229,11 @@ img {
   opacity: 1;
   -webkit-transition: opacity 150ms linear, -webkit-transform 250ms ease;
   transition: opacity 150ms linear, -webkit-transform 250ms ease;
+  -o-transition: transform 250ms ease, opacity 150ms linear;
   transition: transform 250ms ease, opacity 150ms linear;
   transition: transform 250ms ease, opacity 150ms linear, -webkit-transform 250ms ease;
   -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
@@ -244,9 +254,11 @@ img {
 
 .game:hover .background {
   -webkit-transition: var(--transition), opacity 100ms linear;
+  -o-transition: var(--transition), opacity 100ms linear;
   transition: var(--transition), opacity 100ms linear;
   opacity: 1;
   -webkit-transform: scale(1.35, 1.3) translateY(5%);
+      -ms-transform: scale(1.35, 1.3) translateY(5%);
           transform: scale(1.35, 1.3) translateY(5%);
 }
 
@@ -303,26 +315,12 @@ img {
   position: relative;
   -webkit-transition: -webkit-transform ease-in-out 150ms;
   transition: -webkit-transform ease-in-out 150ms;
+  -o-transition: transform ease-in-out 150ms;
   transition: transform ease-in-out 150ms;
   transition: transform ease-in-out 150ms, -webkit-transform ease-in-out 150ms;
 }
 
-.streamer:hover .icon {
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
-}
-
-.streamer:hover .icon::before {
-  opacity: 1;
-}
-
-.streamer .icon:hover {
-  -webkit-transform: translateY(-15%) scale(1.2);
-          transform: translateY(-15%) scale(1.2);
-}
-
-.streamer .icon::before,
-.streamer .icon::after {
+.streamer .icon::before, .streamer .icon::after {
   opacity: 0;
   content: "";
   position: absolute;
@@ -337,14 +335,21 @@ img {
   content: "\f04b";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  font-size: .65em;
+  font-size: 0.65em;
   background: #f00;
   display: -ms-grid;
   display: grid;
   place-items: center;
   z-index: 10;
   -webkit-transition: opacity 75ms linear, background-color 100ms linear;
+  -o-transition: opacity 75ms linear, background-color 100ms linear;
   transition: opacity 75ms linear, background-color 100ms linear;
+}
+
+.streamer .icon:hover {
+  -webkit-transform: translateY(-15%) scale(1.2);
+      -ms-transform: translateY(-15%) scale(1.2);
+          transform: translateY(-15%) scale(1.2);
 }
 
 .streamer .icon:hover::before {
@@ -356,6 +361,16 @@ img {
   z-index: 1;
   -webkit-animation: pulse 1250ms infinite;
           animation: pulse 1250ms infinite;
+}
+
+.streamer:hover .icon {
+  -webkit-transform: translateY(-10%);
+      -ms-transform: translateY(-10%);
+          transform: translateY(-10%);
+}
+
+.streamer:hover .icon::before {
+  opacity: 1;
 }
 
 @-webkit-keyframes pulse {
