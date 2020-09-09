@@ -196,6 +196,17 @@ img {
           transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
+  overflow: hidden;
+}
+
+.background img {
+  opacity: .3;
+  -webkit-clip-path: url(#wave);
+          clip-path: url(#wave);
+  height: 30%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .game:hover .rank {

@@ -168,6 +168,15 @@ img {
   transform: scale(0.2, 0.9);
   opacity: 0;
   border-radius: var(--br);
+  overflow: hidden;
+
+  img {
+    opacity: .3;
+    clip-path: url(#wave);
+    height: 30%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .game:hover {
