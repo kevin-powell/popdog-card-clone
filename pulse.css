@@ -45,12 +45,12 @@ img {
 }
 
 .streamers img {
-  border-radius: 50%;
+  border-radius: 40%;
 }
 
 .icon {
   width: 10em;
-  height: 10em;
+  height: 11em;
   position: relative;
   transition: transform ease-in-out 150ms;
 }
@@ -64,7 +64,7 @@ img {
 }
 
 .streamer .icon:hover {
-  transform: translateY(-20%) scale(1.1);
+  transform: translateY(-22%) scale(1.1);
 }
 
 .icon::before,
