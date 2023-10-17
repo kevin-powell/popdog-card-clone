@@ -15,8 +15,8 @@ There are many ways to build and run this project. 1 suggestion is to use both t
 ### To install
 
 ```
-npm -g sass
-npm -g http-server
+npm i -g sass
+npm i -g http-server
 ```
 
 ### Building
